@@ -19,3 +19,24 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list", default: ["blog"]}
       - {label: "Categories", name: "categories", widget: "list", default: [""]}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/about.md"
+        label: "About Page"
+        name: "about"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "content/contact.md"
+        label: "Contact us Page"
+        name: "contact"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "content/projects.md"
+        label: "Projects Page"
+        name: "projects"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: "Body", name: "body", widget: "markdown"}
