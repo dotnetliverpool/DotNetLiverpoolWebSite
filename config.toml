@@ -1,5 +1,5 @@
 baseurl = "https://www.dotnetliverpool.org.uk/"
-title = ".net Liverpool"
+title = ".Net Liverpool"
 
 theme = "hugo-coder"
 
@@ -16,10 +16,10 @@ pygmentscodefencesguesssyntax = true
 disqusShortname = "yourdiscussshortname"
 
 [params]
-    author = ".net Liverpool"
+    author = ".Net Liverpool"
     description = "Dotnet Liverpool comes together once a month in Liverpool"
     keywords = "blog,developer,group,meetup"
-    info = "Liverpool's best .net development group!"
+    info = "Liverpool's best .Net development group!"
     avatarurl = "images/logo.jpg"
     footercontent = "Join us today!"
 
@@ -60,6 +60,12 @@ disqusShortname = "yourdiscussshortname"
     icon = "fab fa-meetup"
     weight = 5
     url = "https://www.meetup.com/Dot-NET-Liverpool"
+
+[[params.social]]
+    name = "Youtube"
+    icon = "fab fa-youtube"
+    weight = 7
+    url = "https://www.youtube.com/channel/UCoM7c1MjQv9Y9-fofGXDJzQ"
 
 
 [languages]
