@@ -7,7 +7,7 @@ tags:
 categories:
   - ''
 ---
-<form name="contact" method="POST" data-netlify="true">
+<form name="contactrecruitmentform" method="POST" data-netlify="true">
 
 By submitting the below form, you are giving Dot Net Liverpool permission to share your information in an attempt to place you within a company they believe will give you the best fit for your lifestyle and career progression. 
 
@@ -19,15 +19,13 @@ By submitting the below form, you are giving Dot Net Liverpool permission to sha
 
   <p>
 
-   
-
  <label>Your Email: <input type="email" name="email" /></label>
 
   </p>
 
   <p>
 
-   <label>Your Role: <select name="role\[]" multiple>
+   <label>Your Role: <select name="role\\[]" multiple>
 
 \    <option value="Senior">Senior Software Developer</option>
 
@@ -66,7 +64,5 @@ By submitting the below form, you are giving Dot Net Liverpool permission to sha
    <button type="submit">Send</button>
 
   </p>
-
-
 
 </form>
