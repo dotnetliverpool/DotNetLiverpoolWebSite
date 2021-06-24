@@ -43,13 +43,13 @@ By submitting the below form, you are giving Dot Net Liverpool permission to sha
 
   <p>
 
-   <label>Years Experience: <textarea name="message"></textarea></label>
+   <label>Years Experience: <textarea name="experience"></textarea></label>
 
   </p>
 
   <p>
 
-   <label>Linked In Profile (optional): <textarea name="message"></textarea></label>
+   <label>Linked In Profile (optional): <textarea name="profile"></textarea></label>
 
   </p>
 
