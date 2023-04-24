@@ -22,5 +22,3 @@ categories:
 \- Support for the community: Supporting a local meet-up group can help strengthen the local tech community and demonstrate a company's commitment to supporting the development of tech talent in the area.
 
 \- Low-cost marketing: Sponsoring a local meet-up group can be a cost-effective marketing strategy for companies looking to build brand awareness and connect with potential customers and clients. Compared to other marketing channels, sponsoring a meet-up group can be a relatively low-cost way to reach a highly targeted audience.
-
-![](/images/capture.jpg)
