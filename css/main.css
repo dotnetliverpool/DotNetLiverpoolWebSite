@@ -430,6 +430,12 @@ img {
         font-size:2.8rem
     }
 }
+#donate-button-container {
+    display: grid;
+    justify-content: center;
+    text-decoration: none;
+    
+  }
 
 .navigation {
     height: 6rem;

@@ -31,7 +31,7 @@
   <main class="wrapper">
     <nav class="navigation">
       <section class="container">
-        <a class="navigation-title" href="https://www.dotnetliverpool.org.uk/">
+             <a class="navigation-title" href="https://www.dotnetliverpool.org.uk/">
           .Net Liverpool
         </a>
         <input type="checkbox" id="menu-toggle">
@@ -54,32 +54,52 @@
       <section class="container page">
         <article>
           <header>
-            <h1>Projects</h1>
+            <h1>Support Our Mission</h1>
           </header>
-      
-          <p>All of our projects are found on GitHub including this website! Feel free to send some PR’s our way and help contribute to the free software we write for our community.</p>
-      
-      <p>Here are a list of things we are working on</p>
-      
-      <ol>
-      <li><p>Educational Material, helping students and novice developers help develop their programming skills with cool side projects and demos</p></li>
-      
-      <li><p>On going work on our website</p></li>
-      
-      <li><p>Apps to help assist with our meetups</p></li>
-      </ol>
-      
-      <p><a href="https://github.com/dotnetliverpool">https://github.com/dotnetliverpool</a></p>
-      
+          <p>Our mission is to foster a thriving technology community for professionals and students within liverpool. 
+            <p>Help us achieve this by:</p>
+            <ol>
+              <li>
+                <p>Spreading the Word: Share our Meetup events on your social networks and with your colleagues. 
+                  Let's bring more like-minded individuals into our community.
+                </p>
+              </li>
+              <li>
+                <p>Contribute your Expertise: Have a topic you're passionate about? Consider giving a talk at our Meetup. 
+                Your insights can inspire and educate others in the community.
+                </p>
+              </li>
+              <li>
+                <p>Contribute for our meetups: help fuel our speakers' creativity by <strong><a href="">BUYING A CUP OF COFFEE</a></strong> 
+                  for them. Every contribution makes a difference!
+                </p>
+              </li>
+            </ol> 
+            
+            
+          
+            <div id="donate-button-container">
+              <div id="donate-button"></div>
+              <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+              <script>
+                PayPal.Donation.Button({
+                  env: 'production',
+                  hosted_button_id: 'MockButtonID',
+                  image: {
+                    src: 'https://www.dotnetliverpool.org.uk/img/donate_button.png',
+                    alt: 'Donate with PayPal button',
+                    title: 'PayPal - The safer, easier way to pay online!',
+                  }
+                }).render('#donate-button');
+              </script>
+            </div>
         </article>
       </section>
         </div>
 
         <footer class="footer">
           <section class="container">
-
             <p>Join us today!</p>
-
           </section>
         </footer>
 
