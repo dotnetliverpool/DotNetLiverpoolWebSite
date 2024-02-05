@@ -28,6 +28,9 @@ jobs:
       name: dev
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+        ENV: ${{ secrets.ENV }}
+        PAYPALBUTTONID: ${{ secrets.PAYPALBUTTONID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
