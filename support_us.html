@@ -83,10 +83,10 @@
               <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
               <script>
                 PayPal.Donation.Button({
-                  env: 'production',
-                  hosted_button_id: 'MockButtonID',
+                  env:  '${{ secret.ENV }}',
+                  business : '${{ secret.ENV }}',
                   image: {
-                    src: 'https://www.dotnetliverpool.org.uk/img/donate_button.png',
+                    src: './img/donate_button.png',
                     alt: 'Donate with PayPal button',
                     title: 'PayPal - The safer, easier way to pay online!',
                   }
