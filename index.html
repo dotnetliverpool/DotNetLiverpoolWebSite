@@ -23,7 +23,6 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="icon" type="image/png" href="https://www.dotnetliverpool.org.uk/images/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="https://www.dotnetliverpool.org.uk/images/favicon-16x16.png" sizes="16x16">
-  
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script type="text/javascript" src="scripts/script.js"></script>
 </head>
@@ -104,11 +103,10 @@
           
           <!--  -->
           <div id="popup-form-container">
-            <form class="form-wrapper" id="sponsor-form">
+            <form class="form-wrapper" id="sponsor-form", method="POST" action="https://formspree.io/f/xdoqdqnr">
               <div class="form-head" id="close-popup">x</div>
               <div class="form-card">
                 <input
-                  id="form-full-name"
                   class="form-input"
                   type="text"
                   name="full_name"
@@ -119,7 +117,6 @@
     
               <div class="form-card">
                 <input
-                  id="form-email"
                   class="form-input"
                   type="email"
                   name="email"
@@ -131,7 +128,6 @@
     
               <div class="form-card">
                 <textarea
-                  id="form-message"
                   class="form-textarea"
                   maxlength="420"
                   rows="3"
