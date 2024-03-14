@@ -1,11 +1,3 @@
-function showPopupForm() {
-    document.getElementById("popup-form-container").style.display = "block";
-  }
-  
-function hidePopupForm() {
-    document.getElementById("popup-form-container").style.display = "none";
-}
-
 let icon = { 
     success: 
     '<span class="material-symbols-outlined">task_alt</span>', 
@@ -16,6 +8,18 @@ let icon = {
     info: 
     '<span class="material-symbols-outlined">info</span>', 
 };
+
+
+
+function showPopupForm() {
+    document.getElementById("popup-form-container").style.display = "block";
+  }
+  
+function hidePopupForm() {
+    document.getElementById("popup-form-container").style.display = "none";
+}
+
+
 
 function showToast( 
     message, 
@@ -47,38 +51,56 @@ function showToast(
   
     document.body.appendChild(box)}; 
 
-function getEmailDetails() {
-    fullName =  document.getElementById('form-full-name').value;
-    emailAddress = document.getElementById('form-email').value;
-    message = document.getElementById('form-message').value;
+function getEmailBody(formData) {
+    fullName =  formData.get('full_name');
+    emailAddress = formData.get('email');
+    message = formData.get('message');
     
 
     emailDetails = {
         subject: `SPONSOR REQUEST FROM ${emailAddress}`,
-        body: `Full Name: ${fullName} <br>${message}`
+        body: `Full Name: ${fullName} \n${message}`
     };
     return emailDetails;
 }
 
-function sendEmail(emailDetails) {
-    Email.send({
-        Host: "",
-        Username: "",
-        Password: "",
-        To: "",
-        From: "",
-        Subject: emailDetails.subject,
-        Body: emailDetails.body
-    }).then(
-        function (message) {
-            if (message === "OK") {
-                showToast("Thank you for reaching out. \nWe will respond shortly.", "success");
+async function handleSendEmail(event) {
+    event.preventDefault();
+    hidePopupForm();
+    
+    let form = event.target;
+    var emailBody = getEmailBody(new FormData(form));
+    console.log(emailBody);
+
+    fetch(event.target.action, {
+      method: form.method,
+      body: JSON.stringify(emailBody),
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        showToast("Message sent successfully!", "success");
+        form.reset()
+      } else {
+        response.json().then(data => {
+            if (data.errors && data.errors.length > 0) {
+                data.errors.forEach(error => {
+                    console.log(error.message);
+                    showToast(error.message, "danger");
+                });
             } else {
-                showToast("Something went wrong!! \nTry again later.", "danger");
+                showToast("Failed to send message! Please try again.", "danger")
             }
-        }
-    )
-}
+        })
+      }
+    }).catch(error => {
+        console.log(error)
+      showToast("Failed to send message! Please try again.", "danger");
+    });
+  }
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('show-popup').addEventListener(
@@ -93,15 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-    document.getElementById('sponsor-form-submit').addEventListener(
-        'click', (e) => {
-            e.preventDefault();
-            emailDetails = getEmailDetails();
-            sendEmail(emailDetails);
-            hidePopupForm();
-            document.getElementById('sponsor-form').reset();
-            
-        } 
+        document.getElementById('sponsor-form').addEventListener(
+        'submit', handleSendEmail 
     );
     }
 );

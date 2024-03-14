@@ -103,11 +103,10 @@
           
           <!--  -->
           <div id="popup-form-container">
-            <form class="form-wrapper" id="sponsor-form">
+            <form class="form-wrapper" id="sponsor-form", method="POST" action="<EMAIL PROVIDER URL>">
               <div class="form-head" id="close-popup">x</div>
               <div class="form-card">
                 <input
-                  id="form-full-name"
                   class="form-input"
                   type="text"
                   name="full_name"
@@ -118,7 +117,6 @@
     
               <div class="form-card">
                 <input
-                  id="form-email"
                   class="form-input"
                   type="email"
                   name="email"
@@ -130,7 +128,6 @@
     
               <div class="form-card">
                 <textarea
-                  id="form-message"
                   class="form-textarea"
                   maxlength="420"
                   rows="3"
