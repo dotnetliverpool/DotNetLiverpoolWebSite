@@ -18,9 +18,13 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet"
+		href= "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> 
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="icon" type="image/png" href="https://www.dotnetliverpool.org.uk/images/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="https://www.dotnetliverpool.org.uk/images/favicon-16x16.png" sizes="16x16">
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script type="text/javascript" src="scripts/script.js"></script>
 </head>
 <body class=" ">
   <main class="wrapper">
@@ -78,11 +82,74 @@
         </div>
       </section>
     </div>
+
     <footer class="footer">
+
       <section class="container">
-        <p>Join us today!</p>
+        <div id="sponsor-wrapper">
+          
+          <h2>Our Sponsors</h2>
+          <ul class="sponsorsWrap">
+            <li>
+              <a href="https://summittotech.com">
+                <img src="./img/summittotech.png" alt="summit to tech logo">
+              </a>
+            </li>
+          </ul>
+
+          <div class="btn-wrap">
+            <button class="show-popup" data-popup-id="sponsor">Sponsor Us</button>
+          </div>
+          
+          <!--  -->
+          <div class="popup-form-container" data-popup-id="sponsor">
+            <form class="form-wrapper" id="sponsor-form", method="POST" action="https://formspree.io/f/xdoqdqnr">
+              <div class="form-head close-popup" data-popup-id="sponsor">x</div>
+              <div class="form-card">
+                <input
+                  class="form-input"
+                  type="text"
+                  name="full_name"
+                  required="required"
+                />
+                <label class="form-label" for="full_name">Full Name</label>
+              </div>
+    
+              <div class="form-card">
+                <input
+                  class="form-input"
+                  type="email"
+                  name="email"
+                  required="required"
+                />
+                <label class="form-label" for="email">Email</label>
+              </div>
+    
+    
+              <div class="form-card">
+                <textarea
+                  class="form-textarea"
+                  maxlength="420"
+                  rows="3"
+                  name="message"
+                  required="required"
+                ></textarea>
+                <label class="form-textarea-label" for="message"
+                  >Message</label
+                >
+              </div>
+              <div class="btn-wrap">
+                <button id="sponsor-form-submit"> Submit </button>
+              </div>
+            </form>
+          </div>
+      </div>
+      <p>Join us today!</p>
       </section>
+
     </footer>
+    <div class="toast-overlay"
+		id="toast-overlay"></div> 
   </main>
 </body>
 </html>
