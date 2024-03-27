@@ -761,7 +761,7 @@ img {
 #close-popup { 
     position: relative; 
     top: 0; 
-    left: 150px; 
+    left: 48%; 
     transition: all 200ms;
     font-size: 15px; 
     font-weight: bold; 
