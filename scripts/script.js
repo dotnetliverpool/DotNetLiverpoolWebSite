@@ -11,12 +11,18 @@ let icon = {
 
 
 
-function showPopupForm() {
-    document.getElementById("popup-form-container").style.display = "block";
+function showPopupForm(popupId) {
+    const popupFormContainer = document.querySelector(`.popup-form-container[data-popup-id="${popupId}"]`);
+    if (popupFormContainer) {
+    popupFormContainer.style.display = "block";
   }
+}
   
-function hidePopupForm() {
-    document.getElementById("popup-form-container").style.display = "none";
+function hidePopupForm(popupId) {
+    const popupFormContainer = document.querySelector(`.popup-form-container[data-popup-id="${popupId}"]`);
+    if (popupFormContainer) {
+      popupFormContainer.style.display = "none";
+    }
 }
 
 
@@ -51,7 +57,7 @@ function showToast(
   
     document.body.appendChild(box)}; 
 
-function getEmailBody(formData) {
+function getSponsorEmailBody(formData) {
     fullName =  formData.get('full_name');
     emailAddress = formData.get('email');
     message = formData.get('message');
@@ -64,12 +70,25 @@ function getEmailBody(formData) {
     return emailDetails;
 }
 
-async function handleSendEmail(event) {
+function getContactEmailBody(formData) {
+    fullName =  formData.get('full_name');
+    emailAddress = formData.get('email');
+    message = formData.get('message');
+    
+
+    emailDetails = {
+        subject: `MESSAGE FROM ${emailAddress}`,
+        body: `Full Name: ${fullName} \n${message}`
+    };
+    return emailDetails;
+}
+
+async function handleSendEmail(event, getEmailBodyFunction) {
     event.preventDefault();
     hidePopupForm();
     
     let form = event.target;
-    var emailBody = getEmailBody(new FormData(form));
+    var emailBody = getEmailBodyFunction(new FormData(form));
     console.log(emailBody);
 
     fetch(event.target.action, {
@@ -103,20 +122,36 @@ async function handleSendEmail(event) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById('show-popup').addEventListener(
-      'click', () => {
-      showPopupForm();
-          }
-      );
+    const showPopupElements = document.getElementsByClassName('show-popup');
+    for (let i = 0; i < showPopupElements.length; i++) {
+        showPopupElements[i].addEventListener('click', (event) => {
+          const popupId = event.target.dataset.popupId;
+          showPopupForm(popupId);
+        });
+    }
 
-    document.getElementById('close-popup').addEventListener(
-        'click', () => {
-        hidePopupForm();
-            }
-        );
+// Attach event listeners to elements with class 'close-popup'
+    const closePopupElements = document.getElementsByClassName('close-popup');
+    for (let i = 0; i < closePopupElements.length; i++) {
+        
+        closePopupElements[i].addEventListener('click', (event) => {
+          const popupId = event.target.dataset.popupId;
+          hidePopupForm(popupId);
+        });
+    }
 
-        document.getElementById('sponsor-form').addEventListener(
-        'submit', handleSendEmail 
+    const sponsorForm = document.getElementById('sponsor-form')
+    if (sponsorForm) {
+        sponsorForm.addEventListener(
+        'submit', (event) => handleSendEmail(event, getSponsorEmailBody)
     );
     }
+
+    const contactForm = document.getElementById('contact-form')
+    if (contactForm) {
+        contactForm.addEventListener(
+        'submit', (event) => handleSendEmail(event, getContactEmailBody)
+    );
+    }
+}
 );

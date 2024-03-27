@@ -430,6 +430,7 @@ img {
         font-size:2.8rem
     }
 }
+
 #donate-button-container {
     display: grid;
     justify-content: center;
@@ -584,7 +585,7 @@ img {
 
 
 
-#popup-form-container {
+.popup-form-container {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -758,10 +759,10 @@ img {
 }
 
 
-#close-popup { 
+.close-popup { 
     position: relative; 
     top: 0; 
-    left: 150px; 
+    left: 48%; 
     transition: all 200ms;
     font-size: 15px; 
     font-weight: bold; 
@@ -770,14 +771,63 @@ img {
     cursor: pointer;
 }
 
-#close-popup:hover { 
+.close-popup:hover { 
     color: orange; 
 }
 
+.layout-row {
+    display: grid;
+    gap: 12%;
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+}
+
+.layout-cell {
+    text-align: left;
+    padding: 30px 0 30px;
+    min-width: 45%;
+}
+
+.layout-cell h6 {
+    margin-top: 25px;
+}
+
+.contact-section .layout-cell .btn-wrap {
+    justify-content: flex-start;
+}
+
+.container-layout {
+    position: relative;
+}
+
+.contact-section .horizontal-line {
+    position: absolute;
+    bottom: 0;
+    left: 25;
+    top: 40;
+    width: 100px; 
+    height: 1.5; 
+    background-color: black;
+}
+
+.contact-section .list ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-top: 4.5rem;
+}
+
+.contact-section .list ul a {
+    margin-right: 120px;
+    margin-top: 40px;
+    font-size: 3rem; 
+}
+
+
+
+
 #sponsor-wrapper {
-    background-color: #fafafa   ; /* Set your desired background color */
-    padding: 2rem; /* Add some padding for spacing */
-    /* text-align: left; Center the content horizontally */
+    background-color: #fafafa   ; 
+    padding: 2rem; 
 }
 
 #sponsor-wrapper h2 {
@@ -786,6 +836,7 @@ img {
     margin-top: 2rem;
 	margin-bottom: 0;
 }
+
 
 .sponsorsWrap {
 	padding: 0;

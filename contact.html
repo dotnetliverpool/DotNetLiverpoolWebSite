@@ -59,10 +59,79 @@
           <header>
             <h1>Contact Us</h1>
           </header>
-      
-          <p>For any enquires please drop us an email josh@dotnetliverpool.org.uk or consider asking us a question on our Twitter page for more general questions @DotNetLiverpool</p>
-      
         </article>
+        <section>
+              <div class="layout-row contact-section">
+                  <div class="layout-cell">
+                    <div class="container-layout">
+                      <p>Send a message with any enquiries and we would get back to you as soon as possible.</p>
+                      <div class="btn-wrap"><button class="show-popup" data-popup-id="contact">Send Message</button></div>
+                    </div>
+                    <div class="popup-form-container" data-popup-id="contact">
+                      <form class="form-wrapper" id="contact-form", method="POST" action="https://formspree.io/f/xdoqdqnr">
+                        <div class="form-head close-popup" data-popup-id="contact">x</div>
+                        <div class="form-card">
+                          <input
+                            class="form-input"
+                            type="text"
+                            name="full_name"
+                            required="required"
+                          />
+                          <label class="form-label" for="full_name">Full Name</label>
+                        </div>
+              
+                        <div class="form-card">
+                          <input
+                            class="form-input"
+                            type="email"
+                            name="email"
+                            required="required"
+                          />
+                          <label class="form-label" for="email">Email</label>
+                        </div>
+              
+              
+                        <div class="form-card">
+                          <textarea
+                            class="form-textarea"
+                            maxlength="420"
+                            rows="3"
+                            name="message"
+                            required="required"
+                          ></textarea>
+                          <label class="form-textarea-label" for="message"
+                            >Message</label
+                          >
+                        </div>
+                        <div class="btn-wrap">
+                          <button id="sponsor-form-submit"> Submit </button>
+                        </div>
+                      </form>
+                      </div>
+                  </div>
+
+                  <div class="layout-cell">
+                    <div class="container-layout">
+                      <h6>Connect With Us On</h6>
+                      <div class="horizontal-line"></div>
+                      <div class="list">
+                      <ul>
+                        <li>
+                          <a href="https://twitter.com/dotnetliverpool" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://www.meetup.com/Dot-NET-Liverpool" aria-label="Meetup">
+                            <i class="fab fa-meetup" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
       </section>
         </div>
 
