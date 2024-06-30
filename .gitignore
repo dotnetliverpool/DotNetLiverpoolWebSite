@@ -1,6 +1,7 @@
 # Hugo default output directory
 /public
 /resources
+/.idea
 
 ## OS Files
 # Windows
