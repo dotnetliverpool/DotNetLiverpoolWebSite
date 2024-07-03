@@ -763,17 +763,16 @@ img {
     margin-right: auto;
   } */
 
-
 #close-popup { 
     position: relative; 
-    top: 0; 
-    left: 150px; 
     transition: all 200ms;
     font-size: 15px; 
     font-weight: bold; 
     text-decoration: none; 
     color: #212121; 
     cursor: pointer;
+    width: 100%;
+    text-align-last: right;
 }
 
 #close-popup:hover { 
