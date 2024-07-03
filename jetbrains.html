@@ -20,14 +20,11 @@
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
     integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous">
-  <link rel="stylesheet"
-		href= "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="icon" type="image/png" href="https://www.dotnetliverpool.org.uk/images/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="https://www.dotnetliverpool.org.uk/images/favicon-16x16.png" sizes="16x16">
   <link rel="alternate" type="application/rss+xml" href="https://www.dotnetliverpool.org.uk/index.xml"
-    title=".Net Liverpool"> 
-  <script type="text/javascript" src="scripts/script.js"></script>
+    title=".Net Liverpool">
   <meta name="generator" content="Hugo 0.54.0">
 </head>
 <body class=" ">
@@ -57,59 +54,55 @@
       <section class="container page">
         <article>
           <header>
-            <h1>Support Our Mission</h1>
+            <h1>Jetbrains License Giveaway</h1>
           </header>
-          <p>Our mission is to foster a thriving technology community for professionals and students within liverpool. 
-            <p>Help us achieve this by:</p>
-            <ol>
-              <li>
-                <p>Spreading the Word: Share our Meetup events on your social networks and with your colleagues. 
-                  Let's bring more like-minded individuals into our community.
-                </p>
-              </li>
-              <li>
-                <p>Contribute your Expertise: Have a topic you're passionate about? Consider giving a talk at our Meetup. 
-                Your insights can inspire and educate others in the community.
-                </p>
-              </li>
-              <li>
-                <p>Contribute for our meetups: help fuel our speakers' creativity by <strong><a href="">BUYING A CUP OF COFFEE</a></strong> 
-                  for them. Every contribution makes a difference!
-                </p>
-              </li>
-            </ol> 
-            
-            
-          
-            <div id="donate-button-container">
-              <div id="donate-button"></div>
-              <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-              <script>
-                PayPal.Donation.Button({
-                  env: 'production',
-                  business : 'donate@dotnetliverpool.org.uk',
-                  image: {
-                    src: './img/donate_button.png',
-                    alt: 'Donate with PayPal button',
-                    title: 'PayPal - The safer, easier way to pay online!',
-                  }
-                }).render('#donate-button');
-              </script>
-            </div>
+      
+          <h1 id="Winner" hidden></h1>
+          <textarea  name="raffle-pool" id="rafflePoolTextArea" cols="30" rows="10"></textarea>
+
+          <div class="btn-wrap">
+            <button id="draw-raffle">Draw from the Pool</button>
+          </div>
+      
         </article>
       </section>
         </div>
 
         <footer class="footer">
           <section class="container">
-            <p>Join us today!</p>
+
+            
+
           </section>
         </footer>
-        <div class="toast-overlay"
-        id="toast-overlay"></div> 
+
   </main>
 
   <div id="b[GjQmmQ1701117122998"></div>
 </body>
+
+<script>
+
+    function handleRaffleEvent(){
+        const rafflePool = document.getElementById('rafflePoolTextArea')
+            .value.trim().split(',').map(name => name.trim());
+        const winner = rafflePool[Math.floor(Math.random() * (rafflePool.length ))];
+        document.getElementById('Winner').innerText = winner;
+        document.getElementById('Winner').hidden = false;
+        document.getElementById('rafflePoolTextArea').hidden = true;
+        document.getElementById('draw-raffle').disabled = true;
+        document.getElementById('draw-raffle').innerText= 'Winner Selected!';
+        
+    
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById('draw-raffle').addEventListener(
+      'click', () => {
+            handleRaffleEvent();
+          }
+      );
+   } )
+</script>
 
 </html>
